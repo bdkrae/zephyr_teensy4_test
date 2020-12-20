@@ -12,5 +12,6 @@ target_sources(app PRIVATE src/pin.c)
 target_sources(app PRIVATE src/button.c)
 target_sources(app PRIVATE src/uart.c)
 target_sources(app PRIVATE src/sdhc.c)
+target_sources(app PRIVATE src/dhcp.c)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
