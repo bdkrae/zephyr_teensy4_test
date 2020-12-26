@@ -24,6 +24,10 @@
     };
 };
 
+&lpuart6 {
+  status = "disabled";
+};
+
 &lpuart4 {
   status = "okay";
   current-speed = < 115200 >;
