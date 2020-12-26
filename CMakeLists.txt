@@ -15,3 +15,6 @@ target_sources(app PRIVATE src/sdhc.c)
 target_sources(app PRIVATE src/dhcp.c)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+zephyr_code_relocate(src/*.c DTCM_DATA)
+zephyr_code_relocate(src/*.c ITCM_TEXT)
