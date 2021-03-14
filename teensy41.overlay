@@ -32,7 +32,3 @@
   status = "okay";
   current-speed = < 115200 >;
 };
-
-&lpspi3 {
-  status = "okay";
-};
