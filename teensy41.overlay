@@ -6,10 +6,14 @@
 
 
 / {
-  aliases {
-            toggle = &toggle_gpio;
-            sw0 = &button0;
-        };
+    aliases {
+      toggle = &toggle_gpio;
+      sw0 = &button0;
+    };
+
+    chosen {
+      zephyr,console = &cdc_acm_uart0;
+    };
 
     app-gpios {
       compatible = "gpio-keys";
@@ -22,6 +26,13 @@
         label = "Push button switch 0 at Pin 23";
       };
     };
+};
+
+&zephyr_udc0 {
+  cdc_acm_uart0: cdc_acm_uart0 {
+    compatible = "zephyr,cdc-acm-uart";
+    label = "CDC_ACM_0";
+  };
 };
 
 &lpuart6 {
