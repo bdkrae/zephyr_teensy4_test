@@ -11,7 +11,7 @@
             "options": {
                 "env": {
                     "ZEPHYR_TOOLCHAIN_VARIANT": "gnuarmemb",
-                    "GNUARMEMB_TOOLCHAIN_PATH": "/usr/local/gcc_arm/gcc-arm-none-eabi-7-2017-q4-major"
+                    "GNUARMEMB_TOOLCHAIN_PATH": "/usr/local"
                 }
             },
             "presentation": {
@@ -63,7 +63,7 @@
             "options": {
                 "env": {
                     "ZEPHYR_TOOLCHAIN_VARIANT": "gnuarmemb",
-                    "GNUARMEMB_TOOLCHAIN_PATH": "/usr/local/gcc_arm/gcc-arm-none-eabi-7-2017-q4-major"
+                    "GNUARMEMB_TOOLCHAIN_PATH": "/usr/local"
                 }
             },
             "presentation": {
@@ -106,6 +106,28 @@
                 "isDefault": true
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Test Teensy4.1",
+            "type": "shell",
+            "command": "../zephyr/scripts/twister --device-testing --device-serial /dev/cu.usbmodem14101 -p teensy41 -T ../zephyr/tests/kernel",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "echo": false
+            },
+            // "group": {
+            //     "kind": "build",
+            //     "isDefault": true
+            // },
+            "problemMatcher": [],
+            "options": {
+                "env": {
+                    "ZEPHYR_TOOLCHAIN_VARIANT": "gnuarmemb",
+                    "GNUARMEMB_TOOLCHAIN_PATH": "/usr/local/gcc_arm/gcc-arm-none-eabi-7-2017-q4-major"
+                }
+            }
         }
     ]
 }
