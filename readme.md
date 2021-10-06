@@ -19,12 +19,10 @@ The uart always listens for incoming data and dumps it to the log. It also liste
 ## SD card
 USDHC hardware on Teensy 4.1 is working but has some limitations shown below. Example prints simple file listing of the card according to [samples/subsys/fs/fat_fs](https://github.com/zephyrproject-rtos/zephyr/tree/master/samples/subsys/fs/fat_fs) example.
 
-### Card detection
-Teensy 4.1 has no hardware switch for card detection. As a workaround a dummy pin is defined in the board definition in file ```teensy41.dts```. It always states
-"SD-Card present" to zephyr´s driver.
+At the time of writing the SD card usage seems not really stable.
 
 ### Card voltage switch
-Teensy 4.1 has no hardware to switch card voltage. As a workaround in the file ```zephyr/subsys/disk/disk_access_usdhc.c``` the line 503 needs to be changed:
+Teensy 4.1 has no hardware to switch card voltage. As a workaround in the file ```zephyr/drivers/disk/usdhc.c``` the line 502 needs to be changed:
 
 ```#define SDMMCHOST_NOT_SUPPORT USDHC_HOST_CTRL_CAP_VS18(1)```
 
